@@ -1,4 +1,3 @@
-import javax.smartcardio.CardPermission;
 
 public class CopyConstructor {
     
