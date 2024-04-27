@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Collaboration Tool</title>
+    <style>
+        .head{
+            
+            text-align: center;
+            color: blueviolet;
+        }
+
+        .navbar{
+            
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar a{
+            background-color: rgb(184, 222, 135);
+            float: right;
+            color: #334393;
+            text-align: center;
+            padding-right: 20px;
+            padding-left: 20px;
+            text-decoration: none;
+            font-size: 30px;
+            box-shadow: 0 0 10px rgba(214, 206, 206, 0.1);
+        }
+        .navbar a:hover{
+            background-color: rgb(143, 143, 143);
+            color: rgb(7, 17, 127);
+        }
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .content ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    .content li {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+
+    </style>
+</head>
+<body>
+    <h1 class="head">Project Collaboration Tool</h1>
+    <div class="navbar">
+        <nav >
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href=" {{ url_for('login') }} ">Login</a>
+        </nav>
+    </div>
+    <br>
+    <div class="content">
+        <p>Welcome to the Project Collaboration Tool!</p>
+        
+        <p>This platform is designed to streamline project management and facilitate collaboration among team members.</p>
+        <p>With this tool, you can:</p>
+        <ul>
+            <li>Organize project tasks and milestones</li>
+            <li>Assign tasks to team members</li>
+            <li>Track progress and deadlines</li>
+        </ul>
+    
+    <p>Get started by registering for an account or logging in if you already have one.</p>
+    </div>
+   
+    
+</body>
+</html>
