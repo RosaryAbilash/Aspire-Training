@@ -15,38 +15,30 @@ Review Date :
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Collaboration Tool</title>
-    <style>
+    <!-- <style>
         body{
              font-family: Verdana;
              background: linear-gradient(90deg, #a681cf, #8ac7d2);
         }
-        .head{
-            
+
+        header {
+            background: linear-gradient(45deg,  #0f85d3, #5adb61);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(95, 84, 211);
+            padding: 10px 0;
             text-align: center;
-            color: rgb(255, 255, 255);
+        }
+        footer {
+            background-color: #7dc8e8;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
-        .navbar{
-            
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-        }
-        .navbar a{
-            background-color: rgb(64, 103, 210);
-            float: right;
-            color: #ffffff;
-            text-align: center;
-            padding-right: 20px;
-            padding-left: 20px;
-            text-decoration: none;
-            font-size: 30px;
-            box-shadow: 0 0 10px rgba(214, 206, 206, 0.1);
-        }
-        .navbar a:hover{
-            background-color: rgb(17, 255, 0);
-            color: rgb(255, 255, 255);
-        }
+
         .content {
             max-width: 800px;
             margin: 0 auto;
@@ -90,22 +82,87 @@ Review Date :
 
         }
 
-        footer {
-        /* background-color: #e0e0e0;  */
-        color: #fff;
-        padding: 10px 0;
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+
+    </style> -->
+
+    <style>
+        body {
+    font-family: Verdana;
+    background: linear-gradient(90deg, #f8eaff, #cff6f9); /* Soft pastel gradient */
+}
+
+header {
+    background: linear-gradient(45deg, #fee9b0, #ffc1b2); /* Warm gradient */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #4e4b6f; /* Deep purple */
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #fdcb80; /* Coral */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f3f4f6; /* Light gray */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333; /* Dark gray */
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.content li {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    font-size: 25px;
+    background: linear-gradient(45deg, #66cdaa, #4bc0c8); /* Turquoise gradient */
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #4bc0c8, #66cdaa); /* Inverse turquoise gradient */
+}
 
     </style>
+
 </head>
 
 <body>
-    <h1 class="head">Project Collaboration Tool</h1>
-    
+    <header>
+        <h1>Project Collaboration Tool</h1>
+    </header>
+
     <br>
     <div class="content">
         <p>Welcome to the Project Collaboration Tool!</p>
@@ -129,7 +186,7 @@ Review Date :
    
 <script>
     function redirectToLogin() {
-        window.location.href = "/login"; 
+        window.location.href = "login.html#login"; 
     }
     function redirectToSignUp() {
         window.location.href = "login.html#signup"; 

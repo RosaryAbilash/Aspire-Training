@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,77 +98,112 @@
 </header>
 
 <div class="container">
-    <form class="form-section">
+    <form action="/createProject" method="POST">
+    <div class="form-section">
         <h2>Project Information</h2>
         <label for="project-name">Project Name:</label>
-        <input type="text" id="project-name" name="project-name" required>
-        
+        <input type="text" id="project-name" name="projectName" required>
+
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="4"></textarea>
-        
+
         <label for="start-date">Start Date:</label>
-        <input type="date" id="start-date" name="start-date" required>
-        
+        <input type="date" id="start-date" name="startDate" required>
+
         <label for="end-date">End Date:</label>
-        <input type="date" id="end-date" name="end-date" required>
-        
+        <input type="date" id="end-date" name="endDate" required>
+
         <label for="project-manager">Project Manager:</label>
-        <input type="text" id="project-manager" name="project-manager" required>
-        
+        <input type="text" id="project-manager" name="projectManager" required>
+
         <label for="priority">Priority:</label>
         <select id="priority" name="priority">
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>
         </select>
-    </form>
-    <form class="form-section">
+
+    </div>
+    <div class="form-section">
         <h2>Team Members</h2>
         <div id="team-members">
             <div class="team-member">
                 <label for="team-member-1">Name:</label>
-                <input type="text" id="team-member-1" name="team-member[]" required>
+                <input type="text" id="team-member-1" name="teamMember[]" required>
                 <label for="role-1">Role:</label>
                 <select id="role-1" name="role[]" required>
-                    
                     <option value="team-leader">Team Leader</option>
                     <option value="team-member">Team Member</option>
                 </select>
             </div>
         </div>
         <button class="btn-save" type="button" onclick="addTeamMember()">Add Team Member</button>
-    </form>
+    </div>
 
-    <form class="form-section">
+    <div class="form-section">
         <h2>Tasks and Activities</h2>
         <label for="tasks">Tasks:</label>
         <textarea name="tasks" id="tasks" rows="2"></textarea>
         <button class="btn-save" type="button" onclick="addTask()">Add More Task</button>
-        <button class="btn-save" type="button" onclick="addAllTask()">Submit</button>
-    </form>
-    
-    <form class="form-section">
+        <!-- <button class="btn-save" type="button" onclick="addAllTask()">Submit</button> -->
+    </div>
+
+    <div class="form-section">
         <h2>Milestones and Goals</h2>
         <label for="milestones">Milestones:</label>
-        <textarea id="milestones" name="milestones" rows="4"></textarea>
+        <textarea id="milestones" name="milestones[]" rows="4"></textarea>
         <label for="goals">Goals:</label>
-        <textarea id="goals" name="goals" rows="4"></textarea>
-        <button class="btn-save" type="button" onclick="addTeamMember()">Submit</button>
-    </form>
+        <textarea id="goals" name="goals[]" rows="4"></textarea>
+        <!-- <button class="btn-save" type="button" onclick="Submit()">Submit</button> -->
+    </div>
     
-    <form class="form-section">
+
+    <div class="form-section">
         <h2>Document Upload</h2>
         <input type="file" id="document-upload" name="document-upload[]" multiple accept=".doc,.docx,.pdf">
         <label for="document-description">Document Description:</label>
         <textarea id="document-description" name="document-description" rows="4"></textarea>
-    </form>
-    
+    </div>
 
     <div class="form-section">
-        <button class="btn-save">Save Project</button>
-        <button class="btn-cancel">Cancel</button>
+        <button class="btn-save" type="submit">Save Project</button>
     </div>
+
+</form>
 </div>
+<!-- Popup message container -->
+<div id="popupMessage" class="popup-message"></div>
 
 </body>
+
+<script>
+
+
+
+    function addTeamMember() {
+    const teamMembersContainer = document.getElementById('team-members');
+    const newTeamMemberDiv = document.createElement('div');
+    newTeamMemberDiv.className = 'team-member';
+    newTeamMemberDiv.innerHTML = `
+        <label for="team-member-${teamMembersContainer.children.length + 1}">Name:</label>
+        <input type="text" id="team-member-${teamMembersContainer.children.length + 1}" name="team-member[]" required>
+        <label for="role-${teamMembersContainer.children.length + 1}">Role:</label>
+        <select id="role-${teamMembersContainer.children.length + 1}" name="role[]" required>
+            <option value="team-leader">Team Leader</option>
+            <option value="team-member">Team Member</option>
+        </select>
+    `;
+    teamMembersContainer.appendChild(newTeamMemberDiv);
+}
+function addTask() {
+    const tasksTextarea = document.getElementById('tasks');
+    tasksTextarea.insertAdjacentHTML('afterend', '<textarea name="tasks" rows="2"></textarea>');
+}
+
+</script>
+
+
 </html>
+
+
+
